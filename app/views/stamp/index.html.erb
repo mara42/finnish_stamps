@@ -2,7 +2,8 @@
 <ul>
     <% @stamps.each do |stamp| %>
         <li>
-            <%= stamp.tag_list %>
+            <%= stamp.name %>
         </li>
         <% end %>
 </ul>
+<%= paginate @stamps %>
