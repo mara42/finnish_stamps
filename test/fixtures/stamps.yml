@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tags: MyString
+  release_date: 
+  nominal_value: 1.5
+  name: MyString
+  colour: MyString
+  place_of_printing: MyString
+  amount_printed: 1
+  artist: MyString
+  currency: MyString
+  image_url: MyString
+
+two:
+  tags: MyString
+  release_date: 
+  nominal_value: 1.5
+  name: MyString
+  colour: MyString
+  place_of_printing: MyString
+  amount_printed: 1
+  artist: MyString
+  currency: MyString
+  image_url: MyString
