@@ -1,0 +1,8 @@
+<h1>List of all stamps</h1>
+<ul>
+    <% @stamps.each do |stamp| %>
+        <li>
+            <%= stamp.tag_list %>
+        </li>
+        <% end %>
+</ul>
