@@ -1,0 +1,10 @@
+Todo:
+
+Rework database:
+Artist have their own table to which stamps belong to
+make methods to display stats per year
+
+Artist
+    references: stamps
+    name:string
+
