@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
 
     def create
         if login(params[:email], params[:password])
-            redirect_back_or_to(stamp_index_path)
+            redirect_back_or_to(stamps_path)
         else
             render action: :new
         end

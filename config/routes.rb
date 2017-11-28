@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  get 'stamp/index'
   resources :users
-  get 'stamp/show'
-  get 'stamp/stats'
-
   resources :user_sessions, only: [ :new, :create, :destroy ]
+
+  root 'static_pages#welcome'
+  get 'about' => 'static_pages#about'
+
+  get 'stamps' => 'stamp#index'
+  get 'stamp/show'
+  get 'printing_graph' => 'stamp#stats'
+
+  get 'create_account' => 'users#new'
 
   get 'login' => 'user_sessions#new'
   get 'logout' => 'user_sessions#destroy'
