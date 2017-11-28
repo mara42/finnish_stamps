@@ -11,8 +11,7 @@ class StampController < ApplicationController
   def stats
     @chart = LazyHighCharts::HighChart.new('graph') do |f|
       f.title({ text: "Stamps printed per year"})
-      # f.xAxis({type: 'datetime' })
-      f.series(:data=> stamps_printed_per_year)
+      f.series(name: "Amount printed", :data=> stamps_printed_per_year)
       f.chart({defaultSeriesType: "column"})
       f.plotOptions({series: {pointPadding: 0, groupPadding: 0.1}})
     end
