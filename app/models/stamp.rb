@@ -15,6 +15,14 @@ class Stamp < ApplicationRecord
         self.tags = new_or_found_tags
     end
 
+    # Shamelessly stolen from http://www.korenlc.com/creating-a-simple-search-in-rails-4/
+    def self.search(search)
+        where('name LIKE :search
+         OR colour LIKE :search
+         OR place_of_printing LIKE :search
+         OR artist LIKE :search OR currency LIKE :search', 
+         search: "%#{search}%").order(:release_date)
+    end
 
 end
 

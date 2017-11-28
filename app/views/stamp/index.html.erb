@@ -1,52 +1,53 @@
 <h1>Catalog of all stamps</h1>
 <div class="container">
-    <div class="row">
-        <% @stamps.each do |stamp| %>
-            <div class="card w-15 info-card">
-                <div class="front">
-                    <%= image_tag image_url(stamp.image_url), class: "card-img-top" %>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%= stamp.name %>
-                            </h5>
+    <%= render partial: "search" %>
+        <div class="row">
+            <% @stamps.each do |stamp| %>
+                <div class="card w-15 info-card">
+                    <div class="front">
+                        <%= image_tag image_url(stamp.image_url), class: "card-img-top" %>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= stamp.name %>
+                                </h5>
 
-                        </div>
+                            </div>
 
+                    </div>
+                    <div class="back">
+                        <dl>
+                            <dt>Release date</dt>
+                            <dd>
+                                <%= stamp.release_date %>
+                            </dd>
+                            <dt>End of use</dt>
+                            <dd>
+                                <%= stamp.end_of_use %>
+                            </dd>
+                            <dt>Nominal value</dt>
+                            <dd>
+                                <%= stamp.nominal_value %>
+                            </dd>
+                            <dd><dt>Colour</dt>
+                                <%= stamp.colour %>
+                            </dd>
+                            <dd><dt>Place of printing</dt>
+                                <%= stamp.place_of_printing %>
+                            </dd>
+                            <dd><dt>Amount printed</dt>
+                                <%= stamp.amount_printed %>
+                            </dd>
+                            <dd><dt>Artist</dt>
+                                <%= stamp.artist %>
+                            </dd>
+                            <dd><dt>Currency</dt>
+                                <%= stamp.currency %>
+                            </dd>
+                        </dl>
+                    </div>
                 </div>
-                <div class="back">
-                    <dl>
-                        <dt>Release date</dt>
-                        <dd>
-                            <%= stamp.release_date %>
-                        </dd>
-                        <dt>End of use</dt>
-                        <dd>
-                            <%= stamp.end_of_use %>
-                        </dd>
-                        <dt>Nominal value</dt>
-                        <dd>
-                            <%= stamp.nominal_value %>
-                        </dd>
-                        <dd><dt>Colour</dt>
-                            <%= stamp.colour %>
-                        </dd>
-                        <dd><dt>Place of printing</dt>
-                            <%= stamp.place_of_printing %>
-                        </dd>
-                        <dd><dt>Amount printed</dt>
-                            <%= stamp.amount_printed %>
-                        </dd>
-                        <dd><dt>Artist</dt>
-                            <%= stamp.artist %>
-                        </dd>
-                        <dd><dt>Currency</dt>
-                            <%= stamp.currency %>
-                        </dd>
-                    </dl>
-                </div>
-            </div>
-            <% end %>
+                <% end %>
 
-    </div>
+        </div>
 </div>
 <%= paginate @stamps %>
