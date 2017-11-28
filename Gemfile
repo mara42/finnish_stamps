@@ -31,14 +31,17 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#Provides pagination for views
+# Provides pagination for views
 gem 'kaminari'
 
-#Quick and easy css with bootstrap
+# Quick and easy css with bootstrap
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 
-#Data visualization, which requires a license for commercial use
+# Data visualization, which requires a license for commercial use
 gem 'lazy_high_charts'
+
+# Authentication
+gem 'sorcery'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
