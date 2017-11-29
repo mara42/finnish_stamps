@@ -1,4 +1,10 @@
 <%= form_tag stamps_path, method: "get", id: "search-form", class: "form-inline my-2 my-lg-0" do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Stamps", class: "form-control mr-sm-2" %>
-        <%= submit_tag "Search", class: "btn btn-outline-primary my-2 my-sm-0" %>
-            <% end %>
+    <%= text_field_tag "search{}", params[:search[0]], placeholder: "Search Stamps", class: "form-control mr-sm-2" %>
+        <%= check_box_tag "search{}", value: true %>
+            <%= check_box_tag "search{}", value: true %>
+                <%= check_box_tag "search{}", value: true %>
+                    <%= check_box_tag "search{}", value: true %>
+                        <%= check_box_tag "search{}", value: true %>
+                            <%= check_box_tag "search{}", value: true %>
+                                <%= submit_tag "Search", class: "btn btn-outline-primary my-2 my-sm-0" %>
+                                    <% end %>
