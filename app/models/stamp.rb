@@ -15,6 +15,7 @@ class Stamp < ApplicationRecord
         self.tags = new_or_found_tags
     end
 
+    # implement something like this: https://stackoverflow.com/questions/39691497/search-query-multiple-column-with-or-and-and-to-apply-filter
     def self.search(search)
         where('name LIKE :search
          OR colour LIKE :search

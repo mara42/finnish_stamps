@@ -1,29 +1,43 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Stamps</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <%= link_to  "Finnish Stamps", root_path, class: 'navbar-brand' %>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
-                <%= link_to  "Home", root_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-                <%= link_to  "Stamps", stamps_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-                <%= link_to  "About", about_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-                <%= link_to  "Printing Graph", printing_graph_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-                <%= link_to  "Create Account", create_account_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-                <%= link_to  "Login", login_path, class: 'nav-link' %>
-            </li>
-        </ul>
-    </div>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <div class="links">
+                <ul class="navbar-nav">
+                    <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+                    <li class="nav-item">
+                        <%= link_to  "Stamps", stamps_path, class: 'nav-link' %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to  "About", about_path, class: 'nav-link' %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to  "Printing Graph", printing_graph_path, class: 'nav-link' %>
+                    </li>
+                </ul>
+            </div>
+            <div class="account-items">
+                <ul class="navbar-nav">
+                    <% if logged_in? %>
+                        <li class="nav-item">
+                            <%= link_to "#{current_user.email}", current_user, class: 'nav-link' %>
+                        </li>
+                        <li class="nav-item">
+                            <%= link_to "Logout", logout_path, class: 'nav-link' %>
+                        </li>
+                        <% else %>
+                            <li class="nav-item">
+                                <%= link_to  "Create Account", create_account_path, class: 'nav-link' %>
+                            </li>
+                            <li class="nav-item">
+                                <%= link_to  "Login", login_path, class: 'nav-link' %>
+                            </li>
+                            <% end %>
+                </ul>
+            </div>
+            </ul>
+        </div>
 </nav>
