@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin, except: [:create, :show, :new]
 
 
   # GET /users
@@ -11,6 +12,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+      unless current_user.id == @user.id || current_user.admin == true 
+        flash.notice = "Don't have access"
+        redirect_to root_path
+    end
   end
 
   # GET /users/new
@@ -28,7 +33,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to root_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -71,4 +76,12 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
     end
+
+    def authenticate_admin
+      unless current_user.try(:admin) == true
+        #flash[:alert] = "You are not authorized to access this page."
+        redirect_to(root_path)
+      end
+    end
+
 end

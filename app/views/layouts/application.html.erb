@@ -10,7 +10,11 @@
 </head>
 
 <body>
+
     <%= render partial: "layouts/header" %>
+        <div class="alert alert-danger flash" role="alert">
+            <%= flash.notice %>
+        </div>
         <%= yield %>
             <%= render partial: "layouts/footer" %>
 </body>

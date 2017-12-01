@@ -7,16 +7,6 @@
     <%= @user.email %>
 </p>
 
-<p>
-    <strong>Password:</strong>
-    <%= @user.password %>
-</p>
-
-<p>
-    <strong>Password confirmation:</strong>
-    <%= @user.password_confirmation %>
-</p>
-
 <% if current_user.admin? && current_user != @user %>
     <%= link_to "delete", @user, method: :delete,
 data: {confirm: "Are you sure?" } %>

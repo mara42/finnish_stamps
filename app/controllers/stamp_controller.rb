@@ -1,7 +1,6 @@
 class StampController < ApplicationController
   include StampHelper
   def index
-    @stamps = Stamp.all
     if params[:search]
       @stamps = Stamp.search(params[:search]).page params[:page]
     else
