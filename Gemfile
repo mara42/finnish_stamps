@@ -37,6 +37,10 @@ gem 'kaminari'
 # Quick and easy css with bootstrap
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 
+# jquery for bootstrap
+gem 'jquery-rails'
+
+
 # Data visualization, which requires a license for commercial use
 gem 'lazy_high_charts'
 
