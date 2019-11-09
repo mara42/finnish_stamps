@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'kaminari'
 
 # Quick and easy css with bootstrap
-gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'bootstrap', '~> 4.3.1'
 
 # jquery for bootstrap
 gem 'jquery-rails'
